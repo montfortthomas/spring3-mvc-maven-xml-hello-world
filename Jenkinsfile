@@ -1,11 +1,8 @@
 pipeline {
-    agent {
-        label "master"
-    }
-    tools {
-        // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
-        maven "Maven3"
-    }
+    agent any
+    environment {
+        PATH = "/opt/apache-maven-3.8.2/bin:$PATH"
+        }
     /*environment {
         // This can be nexus3 or nexus2
         NEXUS_VERSION = "nexus3"
