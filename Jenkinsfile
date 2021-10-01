@@ -29,6 +29,15 @@ pipeline {
                     sh 'mvn clean package'
                 }
         }
+        stage('Docker Build and Tag') {
+           steps {
+              
+                sh 'docker build -t nginxtest:latest .' 
+                  sh 'docker tag nginxtest sunku/nginxtest:latest'
+                sh 'docker tag nginxtest sunku/nginxtest:$BUILD_NUMBER'
+               
+          }
+        }
         /* stage("publish to nexus") {
             steps {
                 script {
