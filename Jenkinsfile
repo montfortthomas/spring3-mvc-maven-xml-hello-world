@@ -27,7 +27,7 @@ pipeline {
                 }
             }
         }
-        /*stage("mvn build") {
+         stage("mvn build") {
             steps {
                 script {
                     // If you are using Windows then you should use "bat" step
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
         }
-        stage("publish to nexus") {
+        /* stage("publish to nexus") {
             steps {
                 script {
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
