@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PATH = "/opt/apache-maven-3.8.2/bin:$PATH"
+        PATH = "/opt/apache-maven-3.8.6/bin:$PATH"
         }
     /*environment {
         // This can be nexus3 or nexus2
@@ -29,7 +29,7 @@ pipeline {
                     sh 'mvn clean package'
                 }
         }
-        stage('Docker Build and Tag') {
+       /* stage('Docker Build and Tag') {
            steps {
               
                 sh 'docker build -t nginxtest:latest .' 
@@ -37,7 +37,7 @@ pipeline {
                 sh 'docker tag nginxtest sunku/nginxtest:$BUILD_NUMBER'
                
           }
-        }
+        }*/
         /* stage("publish to nexus") {
             steps {
                 script {
