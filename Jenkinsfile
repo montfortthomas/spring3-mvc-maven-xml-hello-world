@@ -16,14 +16,14 @@ pipeline {
         NEXUS_CREDENTIAL_ID = "nexus_credentials"
     }*/
     stages {
-        stage("clone code") {
+       /* stage("clone code") {
             steps {
                 script {
                     // Let's clone the source
                     git 'https://github.com/alimelus/spring3-mvc-maven-xml-hello-world.git';
                 }
             }
-        }
+        }*/
          stage("mvn build") {
             steps {
                     sh 'mvn clean package'
