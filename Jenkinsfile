@@ -30,11 +30,10 @@ pipeline {
                 }
         }
        stage('Docker Build and Tag') {
-           steps {
-              
-                sh 'docker build -t nginxtest:latest .' 
-                  sh 'docker tag nginxtest sunku/nginxtest:latest'
-                sh 'docker tag nginxtest sunku/nginxtest:$BUILD_NUMBER'
+           steps {               
+                sh 'docker build -t sunku:nginx .' 
+                //  sh 'docker tag nginxtest sunku/nginxtest:latest'
+                // sh 'docker tag nginxtest sunku/nginxtest:$BUILD_NUMBER'
                
           }
         }
